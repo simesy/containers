@@ -1,6 +1,6 @@
-FROM alpine:3.10
+FROM alpine:3.12
 
-ENV ALPINE_VERSION=3.10
+ENV ALPINE_VERSION=3.12
 
 RUN apk add util-linux
 
