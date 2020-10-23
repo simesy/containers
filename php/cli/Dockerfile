@@ -1,6 +1,9 @@
 ARG PHP_VERSION=7.2
 
-FROM alpine:3.10 as redis-cli
+# We use a multi-stage build to ensure we don't install any additional
+# software eg. redis-server.
+# https://pkgs.alpinelinux.org/contents?branch=v3.10&name=redis&arch=x86_64&repo=main
+FROM skpr/php:${PHP_VERSION}-1.x as redis-cli
 RUN apk add redis
 
 FROM skpr/php:${PHP_VERSION}-1.x
